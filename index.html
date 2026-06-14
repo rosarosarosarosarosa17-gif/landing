@@ -159,6 +159,86 @@
     font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
   }
 
+  /* hero price line */
+  .price-tag {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
+    font-size: 14px; color: var(--muted); flex-wrap: wrap;
+  }
+  .price-tag .dot { width: 5px; height: 5px; transform: rotate(45deg); background: var(--gold-deep); }
+  .price-tag b { color: var(--gold2); font-weight: 600; }
+
+  /* process — Как я работаю */
+  .process { padding: 50px 0 100px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; }
+  .step { position: relative; }
+  .step .s-num {
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px;
+    color: var(--gold-deep); display: inline-flex; align-items: center; justify-content: center;
+    width: 56px; height: 56px; border: 1px solid var(--line); border-radius: 50%;
+    margin-bottom: 24px; background: var(--bg2);
+  }
+  .step:not(:last-child)::after {
+    content: ''; position: absolute; top: 28px; left: 74px; right: -28px; height: 1px;
+    background: var(--line);
+  }
+  .step h3 { font-family: 'Cormorant Garamond', serif; font-size: 25px; font-weight: 600; margin-bottom: 10px; }
+  .step p { color: var(--muted); font-size: 15px; }
+  .step .s-when { display: block; margin-top: 12px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold1); }
+
+  /* work examples — Примеры работ */
+  .work { padding: 50px 0 100px; }
+  .work-note { text-align: center; color: var(--muted); font-size: 14px; margin: -34px auto 48px; max-width: 460px; }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .work-card {
+    border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+    background: var(--glass); transition: transform .25s, border-color .3s;
+  }
+  .work-card:hover { transform: translateY(-4px); border-color: var(--gold-deep); }
+  .work-shot { position: relative; }
+  .work-bar { height: 36px; display: flex; align-items: center; gap: 7px; padding: 0 16px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,0.02); }
+  .work-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+  .work-preview {
+    aspect-ratio: 16/9; padding: 26px; display: flex; flex-direction: column; gap: 12px;
+    background: radial-gradient(360px circle at 75% 15%, rgba(232,201,138,0.14), transparent 60%), linear-gradient(160deg,#14121a,#0b0b11);
+  }
+  .blk { background: rgba(232,201,138,0.10); border-radius: 3px; }
+  .blk.gold { background: linear-gradient(120deg, var(--gold1), var(--gold-deep)); }
+  .blk.h { height: 22px; width: 62%; }
+  .blk.line { height: 9px; }
+  .blk.btn-blk { height: 26px; width: 120px; border-radius: 4px; margin-top: 6px; }
+  .blk.img { flex: 1; min-height: 50px; }
+  /* chat preview variant */
+  .chat { gap: 10px; justify-content: center; }
+  .bubble { max-width: 72%; padding: 9px 13px; border-radius: 12px; font-size: 12px; color: var(--muted); }
+  .bubble.them { background: rgba(255,255,255,0.05); border-bottom-left-radius: 3px; }
+  .bubble.me { align-self: flex-end; color: #1a1407; background: linear-gradient(120deg, var(--gold2), var(--gold1)); border-bottom-right-radius: 3px; }
+  .work-body { padding: 24px 26px 28px; }
+  .work-tag { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold1); }
+  .work-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; margin: 8px 0 8px; }
+  .work-body p { color: var(--muted); font-size: 14.5px; }
+
+  /* offer — цена под ключ */
+  .offer { padding: 30px 0 110px; }
+  .offer-card {
+    max-width: 720px; margin: 0 auto; text-align: center;
+    border: 1px solid var(--line); border-radius: 4px; padding: 56px 44px 60px; position: relative;
+    background: linear-gradient(180deg, rgba(232,201,138,0.06), transparent 55%);
+  }
+  .offer-card .eyebrow { justify-content: center; margin-bottom: 22px; }
+  .offer-card .eyebrow::after { content: ''; width: 38px; height: 1px; background: var(--gold-deep); }
+  .offer-card h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px,4vw,46px); font-weight: 500; margin-bottom: 4px; }
+  .price { display: flex; align-items: baseline; justify-content: center; gap: 16px; margin: 22px 0 4px; flex-wrap: wrap; }
+  .price .amount {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(54px,9vw,84px); line-height: 1;
+    background: linear-gradient(120deg, var(--gold2), var(--gold-deep));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .price .term { font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold1); }
+  .offer-sub { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
+  .includes { list-style: none; display: grid; grid-template-columns: repeat(2, auto); gap: 14px 40px; justify-content: center; margin: 0 auto 40px; text-align: left; }
+  .includes li { color: var(--ink); font-size: 15px; display: flex; align-items: center; gap: 11px; }
+  .includes li::before { content: ''; width: 6px; height: 6px; transform: rotate(45deg); background: var(--gold1); flex: none; }
+
   @media (max-width: 880px) {
     .hero { grid-template-columns: 1fr; text-align: center; padding-top: 20px; }
     .eyebrow, .lede { margin-left: auto; margin-right: auto; }
@@ -166,6 +246,13 @@
     .hand-svg { max-width: 300px; }
     .grid { grid-template-columns: 1fr; border-left: 1px solid var(--line); }
     .card { border-right: 1px solid var(--line); }
+    .price-tag { justify-content: center; }
+    .steps { grid-template-columns: 1fr; gap: 36px; }
+    .step:not(:last-child)::after { display: none; }
+    .step .s-num { margin-bottom: 18px; }
+    .work-grid { grid-template-columns: 1fr; }
+    .includes { grid-template-columns: 1fr; gap: 12px; }
+    .offer-card { padding: 44px 24px 48px; }
   }
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; scroll-behavior: auto; }
@@ -191,6 +278,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
           Написать в Telegram
         </a>
+        <div class="price-tag">Лендинг под ключ — <b>5 000 ₽</b><span class="dot"></span>запуск за <b>3 дня</b></div>
       </div>
 
       <div class="hand-stage">
@@ -295,6 +383,100 @@
       </div>
     </section>
 
+    <section class="process">
+      <div class="sec-head">
+        <div class="eyebrow">Процесс</div>
+        <h2>Как я работаю</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="s-num">I</span>
+          <h3>Обсуждаем</h3>
+          <p>Короткий созвон или переписка: цель страницы, ваши тексты и пожелания. Если контента нет — помогу собрать и сформулировать.</p>
+          <span class="s-when">День 1</span>
+        </div>
+        <div class="step">
+          <span class="s-num">II</span>
+          <h3>Собираю</h3>
+          <p>Делаю дизайн и вёрстку: адаптив под телефон, быстрая загрузка, аккуратные блоки и кнопки, которые ведут к заявке.</p>
+          <span class="s-when">Дни 2–3</span>
+        </div>
+        <div class="step">
+          <span class="s-num">III</span>
+          <h3>Запускаю</h3>
+          <p>Вношу правки, публикую сайт в интернете и отдаю ссылку. Покажу, как менять тексты самостоятельно.</p>
+          <span class="s-when">День 3</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="work">
+      <div class="sec-head">
+        <div class="eyebrow">Портфолио</div>
+        <h2>Примеры работ</h2>
+      </div>
+      <p class="work-note">Демонстрационные концепты — чтобы показать стиль и подход. Ваш проект соберу под вашу задачу.</p>
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="work-shot">
+            <div class="work-bar"><span class="work-dot"></span><span class="work-dot"></span><span class="work-dot"></span></div>
+            <div class="work-preview">
+              <div class="blk h gold"></div>
+              <div class="blk line" style="width:80%"></div>
+              <div class="blk line" style="width:55%"></div>
+              <div class="blk btn-blk gold"></div>
+              <div class="blk img"></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Лендинг</span>
+            <h3>Кофейня «Зерно»</h3>
+            <p>Одностраничник с меню, фото и формой брони столика. Собран и опубликован за 3 дня.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-shot">
+            <div class="work-bar"><span class="work-dot"></span><span class="work-dot"></span><span class="work-dot"></span></div>
+            <div class="work-preview chat">
+              <div class="bubble them">Привет! Хочу записаться 👋</div>
+              <div class="bubble me">Конечно! На какой день удобно?</div>
+              <div class="bubble them">На пятницу, вечер</div>
+              <div class="bubble me">Записала на 18:00 ✅</div>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Telegram-бот</span>
+            <h3>Бот для записи</h3>
+            <p>Принимает заявки и записывает клиентов в любое время — без вашего участия.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer">
+      <div class="offer-card">
+        <div class="eyebrow">Предложение</div>
+        <h2>Лендинг под ключ</h2>
+        <div class="price">
+          <span class="amount">5 000 ₽</span>
+          <span class="term">за 3 дня</span>
+        </div>
+        <p class="offer-sub">Фиксированная цена. Без скрытых доплат и абонентских платежей.</p>
+        <ul class="includes">
+          <li>Дизайн и вёрстка с нуля</li>
+          <li>Адаптив под телефон</li>
+          <li>Форма заявки или кнопка в Telegram</li>
+          <li>Публикация сайта в интернете</li>
+          <li>Быстрая загрузка</li>
+          <li>2 круга правок</li>
+        </ul>
+        <a href="https://t.me/Punsh_E" class="btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          Заказать лендинг
+        </a>
+      </div>
+    </section>
+
     <section class="contact">
       <h2>Есть задача —<br>есть <em>решение.</em></h2>
       <p>Напишите в Telegram, обсудим, как её воплотить.</p>
@@ -308,3 +490,4 @@
   <footer>© 2026 Анастасия — разработка под ключ</footer>
 </body>
 </html>
+
